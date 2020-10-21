@@ -1,36 +1,38 @@
 import React from 'react';
+
+import { callAllApisForFunc } from './api/api'
+
 import logo from './logo.svg';
 import './App.css';
 
-import axios, {AxiosRequestConfig} from "axios";
 
-const API_KEY = process.env.REACT_APP_FACTORIAL_API
+
+import axios, { AxiosRequestConfig } from "axios";
+
+const API_KEY = process.env.REACT_APP_AWS_FACTORIAL_JS_API
 
 function App() {
 
-  
-
-  async function callApi(){
 
 
-    const config:AxiosRequestConfig = {
-      method: 'post',
-      url: 'https://9azeazmu7i.execute-api.us-east-1.amazonaws.com/default/factorial',
-      data: {
-        num: 5
-      },
-      headers: {
-        'x-api-key': API_KEY
-      },
-    }
-
-    console.log(config);
-
-    const res = await axios(config)
+  async function callApi() {
 
 
+    callAllApisForFunc('factorial', { num: 5 })
 
-    console.log(res);
+    // const config:AxiosRequestConfig = {
+    //   method: 'post',
+    //   url: 'https://7ol1hufwg6.execute-api.us-east-1.amazonaws.com/default/factorial_JS',
+    //   data: {
+    //     num: 5
+    //   },
+    //   headers: {
+    //     'x-api-key': API_KEY
+    //   },
+    // }
+    // console.log(config);
+    // const res = await axios(config)
+    // console.log(res);
   }
 
   return (
