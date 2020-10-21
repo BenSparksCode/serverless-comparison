@@ -16,8 +16,7 @@ React app to compare serverless function performance across languages and cloud 
   
 ### Serverless Function Languages:
  - Node.js
- - Python 3.9
- - Go
+ - Python 3.8
 
 ### Algorithms Implemented In Each Language:
  - [Recursive factorial](https://github.com/BenSparksCode/serverless-comparison/tree/main/functions/factorial)
