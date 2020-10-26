@@ -1,4 +1,4 @@
-# Serverless Comparison
+# Serverless Sandbox
 React app to compare serverless function performance across languages and cloud providers.
 
 **[WORK IN PROGRESS]**
