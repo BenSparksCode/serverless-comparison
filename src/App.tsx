@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { Layout, PageHeader } from 'antd';
+import styled from 'styled-components'
+
 
 import { callAllApisForFunc } from './api/api'
 
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -11,8 +13,17 @@ import axios, { AxiosRequestConfig } from "axios";
 
 const API_KEY = process.env.REACT_APP_AWS_FACTORIAL_JS_API
 
-function App() {
+const App: FC = () => {
 
+  // const { Header, Sider, Content } = Layout;
+
+  const Footer = styled.footer`
+  
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    background: black;
+  `
 
 
   async function callApi() {
@@ -37,23 +48,25 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+
+      <Layout>
+        <PageHeader
+          className="site-page-header"
+          backIcon={false}
+          onBack={() => null}
+          title="📦 Serverless Sandbox"
+        />
+
+        {/* <Content>Content</Content> */}
+
+        <Footer>Footer</Footer>
+      </Layout>
+
+      {/* <header className="App-header">
 
         <button onClick={callApi}>TEST API</button>
 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </header> */}
     </div>
   );
 }
