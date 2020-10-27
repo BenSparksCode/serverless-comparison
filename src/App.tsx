@@ -17,12 +17,16 @@ const App: FC = () => {
 
   // const { Header, Sider, Content } = Layout;
 
-  const Footer = styled.footer`
-  
+  const Footer = styled.div`
     position: absolute;
     bottom: 0;
-    height: 100px;
+    height: 2.5rem;
     background: black;
+    width: 100%;
+  `
+
+  const ContentWrap = styled.div`
+    padding-bottom: 2.5rem; 
   `
 
 
@@ -58,6 +62,37 @@ const App: FC = () => {
         />
 
         {/* <Content>Content</Content> */}
+
+        <ContentWrap>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+          <p>hello</p>
+        </ContentWrap>
+
+
+
 
         <Footer>Footer</Footer>
       </Layout>
