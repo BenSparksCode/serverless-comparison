@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Layout, PageHeader } from 'antd';
 import styled from 'styled-components'
 
+import ControlPanel from './components/ControlPanel'
 
 import { callAllApisForFunc } from './api/api'
 
@@ -15,8 +16,6 @@ const API_KEY = process.env.REACT_APP_AWS_FACTORIAL_JS_API
 
 const App: FC = () => {
 
-  // const { Header, Sider, Content } = Layout;
-
   const Footer = styled.div`
     position: absolute;
     bottom: 0;
@@ -26,7 +25,13 @@ const App: FC = () => {
   `
 
   const ContentWrap = styled.div`
-    padding-bottom: 2.5rem; 
+    padding-bottom: 2.5rem; // for footer
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    justify-content: space-between;
   `
 
 
@@ -64,7 +69,9 @@ const App: FC = () => {
         {/* <Content>Content</Content> */}
 
         <ContentWrap>
-          <p>hello</p>
+
+          <ControlPanel />
+
           <p>hello</p>
           <p>hello</p>
           <p>hello</p>
