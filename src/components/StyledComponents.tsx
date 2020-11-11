@@ -23,6 +23,7 @@ export const ResultCardDiv = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
     border: 1px #d3d3d3 solid;
