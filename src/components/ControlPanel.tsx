@@ -48,7 +48,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({ }) => {
                         Button <DownOutlined />
                     </Button>
                 </FunctionDropdown>
-                <Button type="primary" loading={true} onClick={() => toggleLoading}>
+                <Button type="primary" onClick={() => toggleLoading}>
                     Run
                 </Button>
             </ContentPanelRow>

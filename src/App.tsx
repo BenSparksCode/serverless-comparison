@@ -3,6 +3,8 @@ import { Layout, PageHeader } from 'antd';
 import styled from 'styled-components'
 
 import ControlPanel from './components/ControlPanel'
+import ResultsPanel from './components/ResultsPanel'
+import { Footer } from './components/StyledComponents'
 
 import { callAllApisForFunc } from './api/api'
 
@@ -16,16 +18,9 @@ const API_KEY = process.env.REACT_APP_AWS_FACTORIAL_JS_API
 
 const App: FC = () => {
 
-  const Footer = styled.div`
-    position: absolute;
-    bottom: 0;
-    height: 2.5rem;
-    background: black;
-    width: 100%;
-  `
 
   const ContentWrap = styled.div`
-    padding-bottom: 2.5rem; // for footer
+    padding-bottom: 5rem; // for footer
 
     display: flex;
     flex-direction: column;
@@ -66,42 +61,21 @@ const App: FC = () => {
           title="📦 Serverless Sandbox"
         />
 
-        {/* <Content>Content</Content> */}
-
         <ContentWrap>
 
           <ControlPanel />
 
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
-          <p>hello</p>
+          <ResultsPanel />
+
+
         </ContentWrap>
 
 
 
 
-        <Footer>Footer</Footer>
+        <Footer>
+          Made by Ben Sparks
+        </Footer>
       </Layout>
 
       {/* <header className="App-header">
