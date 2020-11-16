@@ -1,0 +1,27 @@
+[
+    {
+        "name": "factorial",
+        "inputs":[
+            {
+                "inputType": "",
+                "dataType": "INTEGER",
+                "default": 5
+            }
+        ],
+        "apiEndpoints": [
+            {
+                "cloud": "Google",
+                "service": "Cloud Run",
+                "lang": "Python 3.7",
+                "api": "www.google.com"
+            },
+            {
+                "cloud": "AWS",
+                "service": "Lambda",
+                "lang": "Python 3.7",
+                "api": "www.amazon.com"
+            }
+        ]
+
+    }
+]
