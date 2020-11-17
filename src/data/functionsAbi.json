@@ -1,6 +1,8 @@
 [
     {
         "name": "factorial",
+        "label": "Factorial",
+        "id": 1,
         "inputs":[
             {
                 "inputType": "",
@@ -22,6 +24,31 @@
                 "api": "www.amazon.com"
             }
         ]
-
+    },
+    {
+        "name": "prime",
+        "label": "Nth Prime Number",
+        "id": 2,
+        "inputs":[
+            {
+                "inputType": "",
+                "dataType": "INTEGER",
+                "default": 10
+            }
+        ],
+        "apiEndpoints": [
+            {
+                "cloud": "Google",
+                "service": "Cloud Run",
+                "lang": "Python 3.7",
+                "api": "www.google.com"
+            },
+            {
+                "cloud": "AWS",
+                "service": "Lambda",
+                "lang": "Python 3.7",
+                "api": "www.amazon.com"
+            }
+        ]
     }
 ]
