@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Dropdown, Button, Menu } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 import styled from 'styled-components'
 
 import { ContentPanel, ContentPanelRow } from './StyledComponents'
+import { AppContext } from '../contexts/AppContext';
 
 interface ControlPanelProps {
 
@@ -31,10 +32,28 @@ const functionMenu = (
 
 
 const ControlPanel: React.FC<ControlPanelProps> = ({ }) => {
+    const { changeSelectedFunction, selectedFunction, functionAbis } = useContext(AppContext)
     const [loading, setLoading] = useState(false)
 
     const toggleLoading = () => {
         setLoading(!loading)
+    }
+
+    const buildDropdown = () => {
+        const menuItems = functionAbis.map((fn: { id: string | number | null | undefined; label: React.ReactNode; }) => {
+            return (
+                <Menu.Item key={fn.id} onClick={() => changeSelectedFunction(fn)}>
+                    {fn.label}
+                </Menu.Item>
+            )
+        })
+
+
+        return (
+            <Menu onClick={handleDropdownClick}>
+                {menuItems}
+            </Menu>
+        )
     }
 
 
@@ -43,9 +62,9 @@ const ControlPanel: React.FC<ControlPanelProps> = ({ }) => {
             <h1>Choose a Function</h1>
 
             <ContentPanelRow>
-                <FunctionDropdown overlay={functionMenu}>
+                <FunctionDropdown overlay={buildDropdown}>
                     <Button>
-                        Button <DownOutlined />
+                        {selectedFunction ? selectedFunction.label : "Choose a function"} <DownOutlined />
                     </Button>
                 </FunctionDropdown>
                 <Button type="primary" onClick={() => toggleLoading}>
@@ -53,7 +72,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({ }) => {
                 </Button>
             </ContentPanelRow>
             <h1>Function inputs</h1>
-  
+
             <ContentPanelRow>
                 <FunctionDropdown overlay={functionMenu}>
                     <Button>
