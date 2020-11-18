@@ -4,32 +4,12 @@ import { DownOutlined } from '@ant-design/icons';
 import styled from 'styled-components'
 
 import { ContentPanel, ContentPanelRow } from './StyledComponents'
+import { ControlPanelInputs } from './ControlPanelInputs'
 import { AppContext } from '../contexts/AppContext';
 
 interface ControlPanelProps {
 
 }
-
-const handleDropdownClick = (e: any) => {
-    console.log("Dropdown choice:", e.key);
-}
-
-const functionMenu = (
-    <Menu onClick={handleDropdownClick}>
-        <Menu.Item key="1" >
-            1st menu item
-      </Menu.Item>
-        <Menu.Item key="2" >
-            2nd menu item
-      </Menu.Item>
-        <Menu.Item key="3" >
-            3rd menu item
-      </Menu.Item>
-    </Menu>
-);
-
-
-
 
 const ControlPanel: React.FC<ControlPanelProps> = ({ }) => {
     const { changeSelectedFunction, selectedFunction, functionAbis } = useContext(AppContext)
@@ -48,9 +28,8 @@ const ControlPanel: React.FC<ControlPanelProps> = ({ }) => {
             )
         })
 
-
         return (
-            <Menu onClick={handleDropdownClick}>
+            <Menu>
                 {menuItems}
             </Menu>
         )
@@ -74,18 +53,11 @@ const ControlPanel: React.FC<ControlPanelProps> = ({ }) => {
             <h1>Function inputs</h1>
 
             <ContentPanelRow>
-                <FunctionDropdown overlay={functionMenu}>
-                    <Button>
-                        Button <DownOutlined />
-                    </Button>
-                </FunctionDropdown>
-                <Button type="primary" loading={true} onClick={() => toggleLoading}>
-                    Run
-                </Button>
+                <ControlPanelInputs />
             </ContentPanelRow>
 
-            {/* <button>Run</button> */}
-            {/* <input type="text" /> */}
+
+
         </ContentPanel>
     );
 }

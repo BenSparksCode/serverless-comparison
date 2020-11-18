@@ -5,7 +5,9 @@
         "id": 1,
         "inputs":[
             {
-                "inputType": "",
+                "inputName": "number",
+                "placeholder": "Enter number...",
+                "inputType": "TEXT_FIELD",
                 "dataType": "INTEGER",
                 "default": 5
             }

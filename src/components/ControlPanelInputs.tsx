@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { Input, Tooltip } from 'antd';
 
+import { NumberInput } from './NumberInput'
 import { AppContext } from '../contexts/AppContext'
 
 interface ControlPanelInputsProps {
@@ -9,10 +9,26 @@ interface ControlPanelInputsProps {
 
 export const ControlPanelInputs: React.FC<ControlPanelInputsProps> = ({ ...props }) => {
 
-    const { functionAbis } = useContext(AppContext)
+    const { selectedFunction } = useContext(AppContext)
+
+    
 
 
     const buildControlPanelInputs = () => {
+
+        return selectedFunction.inputs.map((input: any) => {
+            switch (input.inputType) {
+                case "TEXT_FIELD":
+                    return (
+                        
+                    )
+                    break;
+
+                default:
+                    return ""
+                    break;
+            }
+        })
 
     }
 

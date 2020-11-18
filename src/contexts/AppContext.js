@@ -10,7 +10,7 @@ class AppContextProvider extends Component {
     state = {
         functionAbis: fnAbis,
         selectedFunction: null,
-
+        inputValues: {},
     }
 
     changeSelectedFunction = (fnObj) => {
@@ -18,6 +18,27 @@ class AppContextProvider extends Component {
             selectedFunction: fnObj
         })
     }
+
+    updateInputValues = (key, value) => {
+        this.setState({
+            inputValues: {...this.state.inputValues, ...{key:value}}
+        })
+        console.log(this.state.inputValues);
+    }
+
+    resetInputValues = () => {
+
+        let newValues
+        selectedFunction.inputs.forEach(input => {
+            newValues[input.inputName] = input.default
+        });
+
+        this.setState({
+            inputValues: newValues
+        })
+        console.log(this.state.inputValues, newValues);
+    }
+
 
     render(){
         return(
