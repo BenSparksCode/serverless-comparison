@@ -20,7 +20,9 @@ export const ControlPanelInputs: React.FC<ControlPanelInputsProps> = ({ ...props
             switch (input.inputType) {
                 case "TEXT_FIELD":
                     return (
-                        
+                        <div>
+
+                        </div>
                     )
                     break;
 

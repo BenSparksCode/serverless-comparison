@@ -29,7 +29,7 @@ class AppContextProvider extends Component {
     resetInputValues = () => {
 
         let newValues
-        selectedFunction.inputs.forEach(input => {
+        this.state.selectedFunction.inputs.forEach(input => {
             newValues[input.inputName] = input.default
         });
 
@@ -45,7 +45,6 @@ class AppContextProvider extends Component {
             <AppContext.Provider value = {{
                 ...this.state,
                 changeSelectedFunction: this.changeSelectedFunction,
-                // assign fns as props here
                 }}>
                 { this.props.children }
             </AppContext.Provider >
