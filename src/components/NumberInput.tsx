@@ -44,5 +44,6 @@ export const NumberInput: React.FC<NumberInputProps> = ({ ...props }) => {
                 maxLength={25}
             />
         </Tooltip>
+        
     );
 }
